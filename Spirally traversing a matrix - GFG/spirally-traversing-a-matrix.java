@@ -81,8 +81,7 @@ class Solution
                 list.add(matrix[i][left]);
                 count--;
             }
-            
-            left++;
+             left++;
             }
         
         }
