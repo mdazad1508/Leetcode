@@ -70,6 +70,11 @@ class Solution
     //Function to reverse a linked list.
     Node reverseList(Node head)
     {
+        
+        
+        /*
+        
+        Method 1: Using array List
         ArrayList<Integer> list = new ArrayList<>();
         
         Node curr=head;
@@ -89,7 +94,24 @@ class Solution
         }
         
         return head;
-
+    */
+    
+    //Method 2 reversing links
+    
+    Node curr=head;
+    Node prev = null;
+    
+    while(curr!=null){
+        
+        Node next = curr.next;
+        curr.next=prev;
+        prev=curr;
+        curr=next;
+    }
+    
+    return prev;
+    
+    
         
     }
 }
