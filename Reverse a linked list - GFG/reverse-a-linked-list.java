@@ -97,7 +97,7 @@ class Solution
     */
     
     //Method 2 reversing links
-    
+   /* 
     Node curr=head;
     Node prev = null;
     
@@ -110,8 +110,22 @@ class Solution
     }
     
     return prev;
+     */
+     
+     //Method 3 recursive;
+     
+     
+     if(head==null) return null;
+     if(head.next==null) return head;
+     
+     
+     Node rest_head = reverseList(head.next);
+     Node rest_tail = head.next;
+     rest_tail.next=head;
+     head.next=null;
     
     
+     return rest_head;
         
     }
 }
