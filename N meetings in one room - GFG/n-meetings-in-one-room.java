@@ -43,7 +43,19 @@ class meeting{
 
 class mycomparator implements Comparator<meeting>{
      public int compare(meeting m1, meeting m2){
-        return m1.end - m2.end;
+       // return m1.end - m2.end;
+       
+       if(m1.end<m2.end){
+           return -1 ; //do nothing
+       }else if(m1.end>m2.end){
+           return 1;     //reverse
+       }else if(m1.start<m2.start){
+           return -1;     //do nothing
+       }else if(m1.start>m2.start){
+           return 1;      //reverse
+       }else {
+           return 0;
+       }
     }
 }
 
@@ -78,4 +90,8 @@ class Solution
         
         
     }
+    
+    //jiska end time phele hoga uska meeting phele karwao in order to maximise meetings..
+    // so we created a datatype which stores start time and end time of a meeting , then sorted it according
+    // to minimun end time 
 }
