@@ -30,30 +30,20 @@ public class Main {
 class Solution {
     String removeDuplicates(String str) {
         
-        // 0(n squre solution)
-        
-        String s = "";
-        
-       for(int i=0;i<str.length();i++){
-           
-           boolean is_non_dup = true;
-           
-           for(int j=0;j<i;j++){
-               
-               if(str.charAt(i)==str.charAt(j) ){
-                   is_non_dup =false;
-                   break;
-               }
-               
-           }
-           
-          if(is_non_dup){
-              s += str.charAt(i);
-          }
+      //lets try in 0(n) time complexity
+      
+      HashSet<Character> hset = new HashSet<>();
+      String s = "";
+      
+      for(int i=0;i<str.length();i++){
           
-       }
-       
-       return s;
+          if(hset.contains(str.charAt(i)) ==false){
+              hset.add(str.charAt(i));
+              s+=str.charAt(i);
+          }
+      }
+      
+      return s;
     }
 }
 
